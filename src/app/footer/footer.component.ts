@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  appDate = new Date().toLocaleDateString();
+  appVersion = "1.0.0:b";
+  appContact = "contact@BoVoyage.fr";
   constructor() { }
 
   ngOnInit() {

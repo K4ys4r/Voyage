@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
+  public title = 'BoVoyages';
+  public isLogin;
+
   constructor() { }
 
   ngOnInit() {
+    this.isLogin =false;
+
   }
+
+LogIn(){
+  this.isLogin = true;
+}
+
+LogOut(){
+  this.isLogin = false;
+}
 
 }

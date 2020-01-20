@@ -1,0 +1,21 @@
+.footer-app{
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    border-radius: 5px;
+    background-color: rgb(190, 182, 182);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer-item{
+    width:30%;
+    margin: auto;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    text-align: center;
+}
