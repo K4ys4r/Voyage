@@ -8,7 +8,9 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent implements OnInit{
   title = 'BoVoyages';
-
+ 
+  //test
+  
   constructor(private httpClient: HttpClient){}
   ngOnInit(){
     this.httpClient.get('api/formules').subscribe(
