@@ -1,1 +1,9 @@
-<p>formule-list works!</p>
+<div class="container mt-3 mb-3">
+    <div class="row">
+        <div class="col-12 list-group">
+            <a [routerLink]="['/formule/', formule.id]" class="list-group-item list-group-item-action" *ngFor="let formule of formules">
+                {{ formule.id }}
+            </a>
+        </div>
+    </div>
+</div>

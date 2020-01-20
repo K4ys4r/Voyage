@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormuleService } from '../shared/formule.service';
+import { Formule } from '../model/Formule';
 
 @Component({
   selector: 'app-formule-list',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormuleListComponent implements OnInit {
 
-  constructor() { }
+  private formules;
+
+  constructor(private formuleService: FormuleService) { }
 
   ngOnInit() {
+
+    this.formuleService.getFormules().subscribe(
+      (result) => {
+        this.formules = result;
+      }
+    )
   }
 
 }

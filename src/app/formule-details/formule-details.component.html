@@ -1,1 +1,16 @@
-<p>formule-details works!</p>
+<div class="container mb-3 mt-3" *ngIf="formule">
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    {{ formule.id }}
+                </div>
+                <div class="card-body">
+                    <p><span class="font-weight-italic">{{formule.id}}</span>, à destination de {{ formule.destination }}
+                        {{formule.date_depart | formule.date_retour date:'yyyy/MM/dd' | formule.prix_ht | formule.nb_places }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
