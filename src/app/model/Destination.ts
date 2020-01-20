@@ -1,13 +1,14 @@
 export class Destination {
-    public continent: string;
-    public pays: string;
+    public id: number;
     public region: string;
     public description: string;
+    public images: string;
 
-    constructor(continent: string, pays: string, region: string, description: string) {
-        this.continent = continent;
-        this.pays = pays;
+    constructor(id: number, region: string, description: string, images: string) {
+        
+        this.id = id;
         this.region = region;
         this.description = description;
+        this.images = images;
     }
 }

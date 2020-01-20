@@ -2,20 +2,19 @@ import { Destination } from './Destination';
 import { Client } from './Client';
 
 export class Formule {
+    public date_depart: Date;
+    public date_retour: Date;
+    public prix_ht: number;
+    public nb_places: number;
     public destination: Destination;
-    public dateAller: Date;
-    public dateRetour: Date;
-    public voyageurs: number;
-    public client: Client;
 
-    constructor(destination: Destination, dateAller: Date, dateRetour: Date, voyageurs: number, client: Client){
+    constructor(date_depart: Date, date_retour: Date, prix_ht: number, nb_places: number, destination: Destination){
 
-
+        this.date_depart = date_depart;
+        this.date_retour = date_retour;
+        this.prix_ht = prix_ht;
+        this.nb_places = nb_places;
         this.destination = destination;
-        this.dateAller = dateAller;
-        this.dateRetour = dateRetour;
-        this.voyageurs = voyageurs;
-        this.client = client;
         
     }
 }
