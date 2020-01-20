@@ -13,7 +13,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class FormulaireComponent implements OnInit {
 
   public formule: Formule;
-  reservation:FormGroup;
+  voyageur:FormGroup;
 
   
 
