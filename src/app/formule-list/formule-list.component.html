@@ -4,9 +4,9 @@
             <a [routerLink]="['/formule/', formule.id]" class="list-group-item list-group-item-action"
                 *ngFor="let formule of formules">
                 <div class="card" style="width: 18rem;">
-                    <img src="assets/{{formule.destination.images[0]}}" class="card-img-top" alt="...">
+                    <img src="assets/{{formule.destination.images[0]}}" *ngIf="formule.destination.images" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">{{ formule.destination.region }}</h5>
+                        <h5 class="card-title">{{formule.destination.region}}</h5>
                         <p class="card-text">Date de départ: {{formule.date_depart  | date:'yyyy/MM/dd'}}</p>
                         <p class="card-text">Date de retour: {{formule.date_retour | date:'yyyy/MM/dd'}}</p>
                         <p class="card-text">Prix: {{formule.prix_ht | currency:'EUR'}} Euros/HT</p>
