@@ -1,1 +1,24 @@
-<p>formulaire works!</p>
+<div>
+    <div class="resarvation">
+        <form (ngSubmit)="onSubmit()" [formGroup]="voyageur">
+            <div>
+                <input type="text" class="form-control" placeholder="First Name" formControlName="firstname" />
+            </div>
+            <div>
+                <input type="text" class="form-control" placeholder="Last Name" formControlName="lastname" />
+            </div>
+            <div>
+                <input type="email" class="form-control" id="exampleDropdownFormEmail2" placeholder="email@example.com"
+                    formControlName="email">
+            </div>
+
+            <div>
+                <button class="btn btn-success" type="button">Rajouter un voyageur</button>
+            </div>
+    
+            <div>
+                <button class="btn btn-primary" type="submit" [disabled]='voyageur.invalid'>Réserver</button>
+            </div>
+        </form>
+    </div>
+</div>

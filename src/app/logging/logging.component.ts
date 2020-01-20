@@ -9,10 +9,14 @@ import { AuthService } from '../shared/auth.service';
 export class LoggingComponent implements OnInit {
 
   public loginStatus;
+  public email;
+  public password;
+  public rememberMe;
   constructor(private loginService: AuthService) { }
 
   ngOnInit() {
     this.loginStatus = this.loginService.isLoged();
+    
   }
 
   LogIn(){

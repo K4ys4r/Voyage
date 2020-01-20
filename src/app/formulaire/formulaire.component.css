@@ -1,0 +1,20 @@
+.resarvation{
+    margin-left: 25%;
+    margin-right: 25%;
+    line-height: 20px;
+    margin-top: 3%;
+}
+
+div{
+    margin-top: 3%;
+}
+
+
+input.ng-invalid.ng-touched{
+    background-color: pink;
+}
+input.ng-valid.ng-touched{
+    background-color:lightgreen;
+}
+
+
