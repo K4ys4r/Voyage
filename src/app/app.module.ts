@@ -13,6 +13,7 @@ import { FormuleDetailsComponent } from './formule-details/formule-details.compo
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoggingComponent } from './logging/logging.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { FooterComponent } from './footer/footer.component';
     FormuleDetailsComponent,
     FormulaireComponent,
     MenuComponent,
-    FooterComponent
+    FooterComponent,
+    LoggingComponent
   ],
   imports: [
     BrowserModule,
