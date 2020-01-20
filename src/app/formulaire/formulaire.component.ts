@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { FormuleService } from '../shared/formule.service';
 import { Formule } from '../model/Formule';
 import { ClientService } from '../shared/client.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormArray } from '@angular/forms';
 
 @Component({
   selector: 'app-formulaire',
@@ -13,9 +13,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class FormulaireComponent implements OnInit {
 
   public formule: Formule;
-  voyageur:FormGroup;
-
-  
+  voyageurs: FormGroup;
 
 
   constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService, private client: ClientService) { }
@@ -31,10 +29,31 @@ export class FormulaireComponent implements OnInit {
           })
       })
 
-      this.voyageur = new FormGroup({
-        firstname: new FormControl('',[Validators.required,]),
-        lastname: new FormControl('',[Validators.required]),
-        email: new FormControl('',[Validators.required]),
+    this.voyageurs = new FormGroup({
+      voyageur: new FormArray([
+        new FormGroup({
+          firstname: new FormControl('', [Validators.required,]),
+          lastname: new FormControl('', [Validators.required]),
+          email: new FormControl('', [Validators.required])
+        })
+      ])
+    })
+  }
+
+  addVoyageur() {
+    this.voyageur.push(
+      new FormGroup({
+        firstname: new FormControl('', [Validators.required,]),
+        lastname: new FormControl('', [Validators.required]),
+        email: new FormControl('', [Validators.required])
       })
+    )
+  }
+
+  removeVoyageur(index){
+    this.voyageur.removeAt(index)
+  }
+  get voyageur():FormArray {
+    return this.voyageurs.get('voyageur') as FormArray
   }
 }
