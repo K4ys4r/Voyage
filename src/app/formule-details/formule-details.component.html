@@ -11,11 +11,12 @@
                     {{ formule.id }}
                 </div>
                 <div class="card-body">
-                    <p><span class="font-weight-italic">{{formule.id}}</span>, à destination de {{ formule.destination }}
+                    <p><span class="font-weight-italic">{{formule.id}}</span>, à destination de
+                        {{ formule.destination }}
                         {{formule.date_depart | formule.date_retour date:'yyyy/MM/dd' | formule.prix_ht | formule.nb_places }}
                     </p>
                 </div>
             </div>
         </div>
     </div>
-</-3" *ngIf="formule">
+</div> -->

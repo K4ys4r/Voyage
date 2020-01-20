@@ -8,7 +8,7 @@ import { FormuleDetailsComponent } from './formule-details/formule-details.compo
 
 const routes: Routes = [
   { path: 'clientlogin', component: LoggingComponent },
-  { path: 'gerervoyage', component: FormuleListComponent,canActivate:[AuthGuardService] },
+  { path: 'gerervoyage', component: FormuleListComponent, canActivate:[AuthGuardService] },
   { path: 'formulelist', component: FormuleListComponent },
   {path: 'formule/:id',component: FormuleDetailsComponent},
   { path: '**', redirectTo: 'formulelist' },
