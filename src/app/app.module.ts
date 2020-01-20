@@ -11,6 +11,8 @@ import { ClientDetailsComponent } from './client-details/client-details.componen
 import { FormuleListComponent } from './formule-list/formule-list.component';
 import { FormuleDetailsComponent } from './formule-details/formule-details.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
     ClientDetailsComponent,
     FormuleListComponent,
     FormuleDetailsComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
