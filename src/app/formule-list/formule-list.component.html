@@ -1,8 +1,19 @@
 <div class="container mt-3 mb-3">
     <div class="row">
-        <div class="col-12 list-group">
-            <a [routerLink]="['/formule/', formule.id]" class="list-group-item list-group-item-action" *ngFor="let formule of formules">
-                {{ formule.id }} {{formule.destination.description}}
+        <div class="col-4 list-group">
+            <a [routerLink]="['/formule/', formule.id]" class="list-group-item list-group-item-action"
+                *ngFor="let formule of formules">
+                <div class="card" style="width: 18rem;">
+                    <img src="assets/{{formule.destination.images[0]}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ formule.destination.region }}</h5>
+                        <p class="card-text">Date de départ: {{formule.date_depart  | date:'yyyy/MM/dd'}}</p>
+                        <p class="card-text">Date de retour: {{formule.date_retour | date:'yyyy/MM/dd'}}</p>
+                        <p class="card-text">Prix: {{formule.prix_ht | currency:'EUR'}} Euros/HT</p>
+                        <p class="card-text">Nombre de places restantes: {{formule.nb_places}}</p>
+                        <a [routerLink]="['/formule/', formule.id]" class="btn btn-primary">Voir détails</a>
+                    </div>
+                </div>
             </a>
         </div>
     </div>

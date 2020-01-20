@@ -9,7 +9,7 @@ import { FormuleService } from '../shared/formule.service';
 })
 export class FormuleDetailsComponent implements OnInit {
 
-  private formule;
+  public formule;
 
   constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService) { }
 

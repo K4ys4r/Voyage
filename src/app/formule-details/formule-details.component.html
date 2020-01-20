@@ -1,22 +1,10 @@
 <div *ngIf="formule">
-    <p>{{formule.date_depart}}</p>
-    <p>{{formule.date_retour}}</p>
+    <h5 class="card-title">{{ formule.destination.region }}</h5>
+    <p>Date de départ: {{formule.date_depart  | date:'yyyy/MM/dd'}}</p>
+    <p>Date de départ: {{formule.date_retour  | date:'yyyy/MM/dd'}}</p>
+    <p>Prix: {{formule.prix_ht | currency:'EUR'}} Euros/HT</p>
+    <p>Nombre de places restantes: {{formule.nb_places}}</p>
+    <p>{{formule.destination.description}}</p>
+    <p><img src="assets/{{formule.destination.images[0]}}"></p>
+    <button [routerLink]="['/reservervoyage/', formule.id]" class="btn btn-warning">Réservation</button>
 </div>
-
-<!-- <div class="container mb-3 mt-3" *ngIf="formule">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-header">
-                    {{ formule.id }}
-                </div>
-                <div class="card-body">
-                    <p><span class="font-weight-italic">{{formule.id}}</span>, à destination de
-                        {{ formule.destination }}
-                        {{formule.date_depart | formule.date_retour date:'yyyy/MM/dd' | formule.prix_ht | formule.nb_places }}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
