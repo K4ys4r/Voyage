@@ -23,13 +23,12 @@ export class LoggingComponent implements OnInit {
   }
 
   LogIn(){
+    // TODO: Verification si le client existe dans le BDD 
     this.loginStatus = this.loginService.LogIn()
   }
 
   LogOut(){
     this.loginStatus = this.loginService.LogOut()
   }
-
-
 
 }

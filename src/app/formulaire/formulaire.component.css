@@ -1,12 +1,19 @@
 .resarvation{
     margin-left: 25%;
     margin-right: 25%;
-    line-height: 20px;
-    margin-top: 3%;
+    margin-top: 1%;
+    padding: 1%;    
+    background-color: rgb(228, 228, 228);
+    border-radius: 20px;    
 }
 
+.container{
+    border-bottom: 1px solid gray;
+}
+
+
 div{
-    margin-top: 3%;
+    margin-top: 1%;
 }
 
 

@@ -32,9 +32,11 @@ export class FormulaireComponent implements OnInit {
     this.voyageurs = new FormGroup({
       voyageur: new FormArray([
         new FormGroup({
-          firstname: new FormControl('', [Validators.required,]),
-          lastname: new FormControl('', [Validators.required]),
-          email: new FormControl('', [Validators.required])
+          nom: new FormControl('', [Validators.required,]),
+          prenom: new FormControl('', [Validators.required]),
+          date_naissance: new FormControl('', [Validators.required]),
+          civilite: new FormControl('',[Validators.required]),
+          email : new FormControl('',[Validators.required])
         })
       ])
     })
@@ -43,10 +45,12 @@ export class FormulaireComponent implements OnInit {
   addVoyageur() {
     this.voyageur.push(
       new FormGroup({
-        firstname: new FormControl('', [Validators.required,]),
-        lastname: new FormControl('', [Validators.required]),
-        email: new FormControl('', [Validators.required])
-      })
+        nom: new FormControl('', [Validators.required,]),
+        prenom: new FormControl('', [Validators.required]),
+        date_naissance: new FormControl('', [Validators.required]),
+        civilite: new FormControl('',[Validators.required]),
+        email : new FormControl('',[Validators.required])
+    })
     )
   }
 
