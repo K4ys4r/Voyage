@@ -26,8 +26,11 @@ export class GererMesVoyagesComponent implements OnInit {
             this.client = result;
           }
         )
-
       })
   }
+
+supprimerReservation(index){
+  this.client.reservations.splice(index,1);
+}
 
 }

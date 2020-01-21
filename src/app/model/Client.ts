@@ -1,3 +1,5 @@
+import { Formule } from './Formule';
+
 export class Client {
     public id: number;
     public civilite: string;
@@ -7,10 +9,13 @@ export class Client {
     public adresse: string;
     public telephone: number;
     public email: string;
+    public password:string;
     public numCB: number;
+    public reservations:[Formule]
 
-    constructor(civilite: string, nom: string, prenom: string, date_naissance: Date, address: string, phone: number, email: string, password: string, numCB: number, id: number) {
+    constructor(civilite: string, nom: string, prenom: string, date_naissance: Date, address: string, phone: number, email: string, password: string, numCB: number, id: number,reservations:[Formule]) {
         
+        this.id = id; 
         this.civilite = civilite;
         this.nom = nom;
         this.prenom = prenom;
@@ -18,8 +23,9 @@ export class Client {
         this.adresse = address;
         this.telephone = phone;
         this.email = email;
+        this.password = password;
         this.numCB = numCB;
-        this.id = id; 
+        this.reservations = reservations
     }
 }
 

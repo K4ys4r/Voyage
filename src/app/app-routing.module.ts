@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'clientlogin', component: LoggingComponent },
   { path: 'reservervoyage/:id', component: FormulaireComponent },
   { path: 'gerervoyage', component: GererMesVoyagesComponent, canActivate:[AuthGuardService] },
+  { path: 'gerervoyage/:id', component: GererMesVoyagesComponent, canActivate:[AuthGuardService] },
   { path: 'formulelist', component: FormuleListComponent },
   {path: 'formule/:id',component: FormuleDetailsComponent},
   {path:'paiement',component:PaiementComponent},

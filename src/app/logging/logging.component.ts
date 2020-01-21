@@ -40,7 +40,7 @@ export class LoggingComponent implements OnInit {
       if (client.email == this.clientLogin.controls.email.value && client.password == this.clientLogin.controls.password.value) {
         this.loginStatus = this.loginService.LogIn()
         this.clientId = client.id;
-        console.log(client)
+        console.log(this.clientId)
       }
     });
     if (!this.loginStatus) {
@@ -49,7 +49,7 @@ export class LoggingComponent implements OnInit {
       this.clientLogin.controls.password.setValue("");
     }
     if (this.loginStatus) {
-      this.router.navigate(['/gerervoyage', this.clientId]);
+      this.router.navigate(['/gerervoyage/', this.clientId]);
     }
   }
   LogOut() {
