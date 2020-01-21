@@ -10,6 +10,7 @@
 .container-carousel{
     float: left;
     margin-right: 15px;
+    width: 305px;
 }
 
 .image{
