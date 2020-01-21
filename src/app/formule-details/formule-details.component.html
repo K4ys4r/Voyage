@@ -3,11 +3,8 @@
 
         <div class="container-carousel" *ngIf="formule.destination.images">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner" *ngFor="let image of formule.destination.images; let i = index">
-                    <div class="carousel-item active" *ngIf="i==0">
-                        <img class="image" src="assets/{{image}}">
-                    </div>
-                    <div class="carousel-item" *ngIf="i>0">
+                <div class="carousel-inner">
+                    <div class="carousel-item" [class.active]="i == 0"  *ngFor="let image of formule.destination.images; let i = index">
                         <img class="image" src="assets/{{image}}">
                     </div>
                     <!--<div class="carousel-item">

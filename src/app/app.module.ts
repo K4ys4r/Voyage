@@ -17,6 +17,8 @@ import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoggingComponent } from './logging/logging.component';
 import { PaiementComponent } from './paiement/paiement.component';
+import { AboutComponent } from './about/about.component';
+import { GererMesVoyagesComponent } from './gerer-mes-voyages/gerer-mes-voyages.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import { PaiementComponent } from './paiement/paiement.component';
     MenuComponent,
     FooterComponent,
     LoggingComponent,
-    PaiementComponent
+    PaiementComponent,
+    AboutComponent,
+    GererMesVoyagesComponent
   ],
   imports: [
     BrowserModule,
