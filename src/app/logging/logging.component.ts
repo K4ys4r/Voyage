@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../shared/auth.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-logging',
@@ -9,14 +10,16 @@ import { AuthService } from '../shared/auth.service';
 export class LoggingComponent implements OnInit {
 
   public loginStatus;
-  public email;
-  public password;
-  public rememberMe;
+  clientLogin:FormGroup;
   constructor(private loginService: AuthService) { }
 
   ngOnInit() {
     this.loginStatus = this.loginService.isLoged();
-    
+    this.clientLogin = new FormGroup({
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+      rememberMe: new FormControl()
+    })
   }
 
   LogIn(){
