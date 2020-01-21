@@ -16,6 +16,7 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoggingComponent } from './logging/logging.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { LoggingComponent } from './logging/logging.component';
     FormulaireComponent,
     MenuComponent,
     FooterComponent,
-    LoggingComponent
+    LoggingComponent,
+    PaiementComponent
   ],
   imports: [
     BrowserModule,

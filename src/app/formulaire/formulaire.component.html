@@ -4,23 +4,40 @@
             <div formArrayName="voyageur">
                 <div *ngFor="let passager of voyageur.controls;let i = index">
                     <div [formGroupName]='i'>
-                        <div>
-                            <p>Voyageur {{i+1}}</p>
-                            <div>
-                                <input type="text" class="form-control" placeholder="First Name"
-                                    formControlName="firstname" />
+                        <div class="form-row container">
+                            <div class="col-12">
+                                <h2> Voyageur {{i+1}} </h2>
                             </div>
-                            <div>
-                                <input type="text" class="form-control" placeholder="Last Name"
-                                    formControlName="lastname" />
+
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" placeholder="Nom" formControlName="prenom" />
                             </div>
-                            <div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" placeholder="Prénom" formControlName="nom" />
+                            </div>
+                            <div class="form-group col-md-4">
+                                <div class="form-check-inline">
+                                    <input type="radio" class="form-check-input" formControlName="civilite"
+                                       id="homme" value="h" />
+                                    <label for="homme">Homme</label>
+                                </div>
+                                <div  class="form-check-inline">
+                                    <input type="radio" class="form-check-input" formControlName="civilite"
+                                        id="femme" value="f"/>
+                                    <label for="femme">Femme</label>
+                                </div>
+                            </div>
+                            <div class="form-group col-md-4">
+                                <input type="text" class="form-control" placeholder="Date de Naissance" formControlName="date_naissance" />
+                            </div>
+
+                            <div class="form-group col-md-8">
                                 <input type="email" class="form-control" id="exampleDropdownFormEmail2"
                                     placeholder="email@example.com" formControlName="email">
                             </div>
                             <div>
-                                <button class="btn btn-danger" type="button" 
-                                    *ngIf="i>=1" (click)="removeVoyageur()">Supprimer
+                                <button class="btn btn-danger" type="button" *ngIf="i>=1"
+                                    (click)="removeVoyageur(i)">Supprimer
                                     voyageur</button>
                             </div>
                         </div>
@@ -31,7 +48,7 @@
                         (click)="addVoyageur()">Rajouter un voyageur</button>
                 </div>
                 <div>
-                    <button class="btn btn-primary" type="submit" [disabled]='voyageurs.invalid'>Réserver</button>
+                    <button class="btn btn-primary" type="submit" [disabled]='voyageurs.invalid' (click)="getPay()">Accéder au paiement</button>
                 </div>
             </div>
         </form>
