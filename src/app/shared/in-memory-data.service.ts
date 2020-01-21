@@ -183,7 +183,8 @@ export class InMemoryDataService implements InMemoryDbService {
     email :"test.email",
     numCB :"53453453",
     password: "test.password",
-    reservations: [Formule],
+    reservations: [],
+    voyageurs : []
   }]
 
     return { formules, voyageurs , clients };

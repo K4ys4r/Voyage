@@ -1,24 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-dark bg-dark">
-    <a class="navbar-brand" routerLink="/userlogin">{{title}}</a>
+    <a class="navbar-brand active" routerLink="/about">{{title}}</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
         aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item ">
                 <a class="nav-link" routerLink="/clientlogin">Login</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" routerLink="/formulelist">Commander un Voyage</a>
+                <a class="nav-link" routerLink="/formulelist">Réserver</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" routerLink="/gerervoyage">Gérer son Voyage</a>
+                <a class="nav-link" routerLink="/gerervoyage">Gérer mes voyages</a>
             </li>
-        </ul>
-  
-        <button class="btn btn-outline-success my-2 my-sm-0" *ngIf='!isLogin' (click)='LogIn()'>LogIn</button>
-        <button class="btn btn-outline-success my-2 my-sm-0" *ngIf='isLogin' (click)='LogOut()'>LogOut</button>
-  
+        </ul>  
     </div>
   </nav>

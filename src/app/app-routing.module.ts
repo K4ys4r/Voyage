@@ -7,17 +7,19 @@ import { FormuleDetailsComponent } from './formule-details/formule-details.compo
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { PaiementComponent } from './paiement/paiement.component';
 import { GererMesVoyagesComponent } from './gerer-mes-voyages/gerer-mes-voyages.component';
+import { AboutComponent } from './about/about.component';
 
 
 const routes: Routes = [
+  { path: 'about', component: AboutComponent },
   { path: 'clientlogin', component: LoggingComponent },
   { path: 'reservervoyage/:id', component: FormulaireComponent },
-  { path: 'gerervoyage', component: GererMesVoyagesComponent, canActivate:[AuthGuardService] },
-  { path: 'gerervoyage/:id', component: GererMesVoyagesComponent, canActivate:[AuthGuardService] },
+  { path: 'gerervoyage', component: GererMesVoyagesComponent, canActivate: [AuthGuardService] },
+  { path: 'gerervoyage/:id', component: GererMesVoyagesComponent, canActivate: [AuthGuardService] },
   { path: 'formulelist', component: FormuleListComponent },
-  {path: 'formule/:id',component: FormuleDetailsComponent},
-  {path:'paiement',component:PaiementComponent},
-  { path: '**', redirectTo: 'formulelist' },
+  { path: 'formule/:id', component: FormuleDetailsComponent },
+  { path: 'paiement', component: PaiementComponent },
+  { path: '**', redirectTo: 'about' },
 ];
 
 @NgModule({

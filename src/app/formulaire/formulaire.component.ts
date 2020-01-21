@@ -16,6 +16,8 @@ export class FormulaireComponent implements OnInit {
   public formule: Formule;
   voyageurs: FormGroup;
   public newClient: Client;
+  public clients;
+  public clientExist = false;
 
 
   constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService, private clientService: ClientService, private router: Router) { }
@@ -29,6 +31,11 @@ export class FormulaireComponent implements OnInit {
           formule => {
             this.formule = formule;
           })
+      })
+
+    this.clientService.getClients().subscribe(
+      (result) => {
+        this.clients = result;
       })
 
     this.voyageurs = new FormGroup({
@@ -58,20 +65,39 @@ export class FormulaireComponent implements OnInit {
         adresse: new FormControl('', [Validators.required]),
         telephone: new FormControl('', [Validators.required]),
         email: new FormControl('', [Validators.required]),
-        assurance: new FormControl()
+        assurance: new FormControl(),
       })
     )
   }
 
   onSubmit() {
+
     this.validerReservation();
     this.router.navigate(['/paiement'])
   }
 
   validerReservation() {
-    this.newClient = this.voyageur.value[0]  
-    this.clientService.createClient(this.newClient)
-    console.log(this.newClient)
+    this.newClient = this.voyageur.value[0];
+    let user = this.clients.find(client => client.email == this.newClient.email && client.password == this.newClient.password)
+    if (user) {
+      user.reservations.push(this.formule)
+      this.clientService.updateUser(user).subscribe()
+      this.voyageurs.value.forEach(voyageur => {
+        user.voyageurs.push(voyageur)
+      });
+
+    } else {
+      this.newClient.reservations = []
+      this.newClient.voyageurs = []
+      this.voyageurs.value.forEach(voyageur => {
+        this.newClient.voyageurs.push(voyageur)
+      });
+      this.newClient.reservations.push(this.formule)
+
+      this.clientService.createClient(this.newClient).subscribe()
+    }
+
+
   }
 
   removeVoyageur(index) {

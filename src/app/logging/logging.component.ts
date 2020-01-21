@@ -35,12 +35,10 @@ export class LoggingComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log()
     this.clients.forEach(client => {
       if (client.email == this.clientLogin.controls.email.value && client.password == this.clientLogin.controls.password.value) {
         this.loginStatus = this.loginService.LogIn()
         this.clientId = client.id;
-        console.log(this.clientId)
       }
     });
     if (!this.loginStatus) {

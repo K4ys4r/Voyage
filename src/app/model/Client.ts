@@ -11,9 +11,10 @@ export class Client {
     public email: string;
     public password:string;
     public numCB: number;
-    public reservations:[Formule]
+    public reservations;
+    public voyageurs;
 
-    constructor(civilite: string, nom: string, prenom: string, date_naissance: Date, address: string, phone: number, email: string, password: string, numCB: number, id: number,reservations:[Formule]) {
+    constructor(civilite: string, nom: string, prenom: string, date_naissance: Date, address: string, phone: number, email: string, password: string, numCB: number, id: number) {
         
         this.id = id; 
         this.civilite = civilite;
@@ -25,7 +26,8 @@ export class Client {
         this.email = email;
         this.password = password;
         this.numCB = numCB;
-        this.reservations = reservations
+        this.reservations = [];
+        this.voyageurs = [];
     }
 }
 
