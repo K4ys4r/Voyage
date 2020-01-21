@@ -1,10 +1,10 @@
-<div class="container float-left border border-dark p-3">
+<div class="container">
     <div *ngIf="formule">
         <h5 class="card-title">{{ formule.destination.region }}</h5>
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/{{formule.destination.images[0]}}">
+                    <img class="image" src="assets/{{formule.destination.images[0]}}">
                 </div>
                 <div class="carousel-item">
                     <img src="assets/{{formule.destination.images[1]}}">
@@ -22,8 +22,8 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="formuledetails">
-            <p>Date de départ: {{formule.date_depart | date:'yyyy/MM/dd'}}</p>
+        <div class="formuledetails col-6">
+            <p>Date de départ: {{formule.date_depart | date:'yyyy/MM/dd' |}}</p>
             <p>Date de départ: {{formule.date_retour | date:'yyyy/MM/dd'}}</p>
             <p>Prix: {{formule.prix_ht | currency:'EUR'}} Euros/HT</p>
             <p>Nombre de places restantes: {{formule.nb_places}}</p>
