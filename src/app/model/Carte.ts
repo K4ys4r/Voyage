@@ -1,4 +1,4 @@
-export class Card {
+export class Carte {
     public titulaire: string;
     public numero: number;
     public cryptogramme: number;
