@@ -1,9 +1,17 @@
-.container{
+.container-details{
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     width: 1000px;
     height: 855px;
+}
+
+.container-carousel{
+    float: left;
+}
+
+.container-formuledetails{
+    float: right;
 }
 
 .image{
@@ -12,3 +20,6 @@
 }
 
 
+.formuledetails{
+    float: right;
+}
