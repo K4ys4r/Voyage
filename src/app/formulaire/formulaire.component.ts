@@ -41,7 +41,8 @@ export class FormulaireComponent implements OnInit {
           adresse: new FormControl('', [Validators.required]),
           telephone: new FormControl('', [Validators.required]),
           email: new FormControl('', [Validators.required]),
-          password: new FormControl('', [Validators.required])
+          password: new FormControl('', [Validators.required]),
+          assurance: new FormControl()
         })
       ])
     })
@@ -57,6 +58,7 @@ export class FormulaireComponent implements OnInit {
         adresse: new FormControl('', [Validators.required]),
         telephone: new FormControl('', [Validators.required]),
         email: new FormControl('', [Validators.required]),
+        assurance: new FormControl()
       })
     )
   }
