@@ -40,7 +40,8 @@ export class FormulaireComponent implements OnInit {
           civilite: new FormControl('', [Validators.required]),
           adresse: new FormControl('', [Validators.required]),
           telephone: new FormControl('', [Validators.required]),
-          email: new FormControl('', [Validators.required])
+          email: new FormControl('', [Validators.required]),
+          password: new FormControl('', [Validators.required])
         })
       ])
     })
@@ -55,7 +56,7 @@ export class FormulaireComponent implements OnInit {
         civilite: new FormControl('', [Validators.required]),
         adresse: new FormControl('', [Validators.required]),
         telephone: new FormControl('', [Validators.required]),
-        email: new FormControl('', [Validators.required])
+        email: new FormControl('', [Validators.required]),
       })
     )
   }

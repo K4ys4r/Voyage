@@ -179,8 +179,9 @@ export class InMemoryDataService implements InMemoryDbService {
     date_naissance :"",
     adresse :"",
     telephone :"",
-    email :"",
-    numCB :""
+    email :"test.email",
+    numCB :"",
+    password: "test.password"
   }]
 
     return { formules, voyageurs , clients };

@@ -14,7 +14,6 @@ export class AuthService {
   }
   LogIn() {
     this.loged = true;
-    this.router.navigate(['/gerevoyage']);
     return this.loged
   }
 

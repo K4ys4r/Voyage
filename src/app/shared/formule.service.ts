@@ -19,8 +19,4 @@ export class FormuleService {
     return this.httpClient.get<Formule>(this.URL + '/' + id)
   }
 
-  findVoyageurId(id):Observable<Client> {
-    return this.httpClient.get<Client>(this.URL + '/'+ id);
-  }
-
 }
