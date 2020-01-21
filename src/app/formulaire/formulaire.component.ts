@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormuleService } from '../shared/formule.service';
 import { Formule } from '../model/Formule';
 import { ClientService } from '../shared/client.service';
@@ -16,7 +16,7 @@ export class FormulaireComponent implements OnInit {
   voyageurs: FormGroup;
 
 
-  constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService, private client: ClientService) { }
+  constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService, private client: ClientService,private router: Router) { }
 
 
 
@@ -52,6 +52,10 @@ export class FormulaireComponent implements OnInit {
         email : new FormControl('',[Validators.required])
     })
     )
+  }
+
+  getPay(){
+    this.router.navigate(['/paiement'])
   }
 
   removeVoyageur(index){
