@@ -5,6 +5,7 @@ import { LoggingComponent } from './logging/logging.component';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { FormuleDetailsComponent } from './formule-details/formule-details.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { PaiementComponent } from './paiement/paiement.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'gerervoyage', component: FormuleListComponent, canActivate:[AuthGuardService] },
   { path: 'formulelist', component: FormuleListComponent },
   {path: 'formule/:id',component: FormuleDetailsComponent},
+  {path:'paiement',component:PaiementComponent},
   { path: '**', redirectTo: 'formulelist' },
 ];
 
