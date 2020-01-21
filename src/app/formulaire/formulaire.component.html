@@ -49,6 +49,11 @@
                                 <input type="password" class="form-control" id="password"
                                     placeholder="password" formControlName="password">
                             </div>
+                            <div class="form-check-inline">
+                                <input type="radio" class="form-check-input" formControlName="assurance" id="assurance"
+                                    value="f" />
+                                <label for="assurance">Assurance</label>
+                            </div>
                             <div>
                                 <button class="btn btn-danger" type="button" *ngIf="i>=1"
                                     (click)="removeVoyageur(i)">Supprimer voyageur</button>
