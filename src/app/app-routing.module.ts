@@ -18,7 +18,7 @@ const routes: Routes = [
   { path: 'gerervoyage/:id', component: GererMesVoyagesComponent, canActivate: [AuthGuardService] },
   { path: 'formulelist', component: FormuleListComponent },
   { path: 'formule/:id', component: FormuleDetailsComponent },
-  { path: 'paiement', component: PaiementComponent },
+  { path: 'paiement/:id', component: PaiementComponent },
   { path: '**', redirectTo: 'about' },
 ];
 

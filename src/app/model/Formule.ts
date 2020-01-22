@@ -8,6 +8,7 @@ export class Formule {
     public prix_ht: number;
     public nb_places: number;
     public destination: Destination;
+    public numbreVoyageurs:number;
 
     constructor(id: number, date_depart: Date, date_retour: Date, prix_ht: number, nb_places: number, destination: Destination){
 

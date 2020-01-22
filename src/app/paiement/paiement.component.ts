@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Carte } from '../model/Carte';
 import * as moment from 'moment'
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ClientService } from '../shared/client.service';
 
 @Component({
   selector: 'app-paiement',
@@ -12,14 +13,19 @@ import { Router } from '@angular/router';
 export class PaiementComponent implements OnInit {
 
   public cartePaiement: Carte;
-  constructor(private router: Router) { }
+  constructor(private router: Router,private activateRoute: ActivatedRoute,private clientService: ClientService) { }
 
-
+  public client;
   clientCarte: FormGroup;
   public paiementStatus = false;
 
 
   ngOnInit() {
+    this.activateRoute.paramMap.subscribe(
+      (params) => this.clientService.findClient(params.get('id')).subscribe(
+        (element)=>this.client = element
+      )
+    )
     this.clientCarte = new FormGroup({
       numero: new FormControl('', [Validators.required]),
       titulaire: new FormControl('', [Validators.required]),
@@ -31,7 +37,9 @@ export class PaiementComponent implements OnInit {
   onSubmit() {
     this.cartePaiement = this.clientCarte.value;
     this.verifierCarte();
-    this.paiementStatus = true;
+    if (this.clientCarte.valid) {
+      this.paiementStatus = true;
+    }
   }
 
 

@@ -43,10 +43,15 @@
                             <p>Date de départ: {{reservation.date_depart | date:'yyyy/MM/dd' }}</p>
                         </li>
                         <li>
+
                             <p>Date de départ: {{reservation.date_retour | date:'yyyy/MM/dd'}}</p>
                         </li>
+
                         <li>
-                            <p>Prix: {{reservation.prix_ht | currency:'EUR'}}/HT</p>
+                            <p>Numbre de voyageurs: {{reservation.numbreVoyageurs}}</p>
+                        </li>
+                        <li>
+                            <p>Prix: {{reservation.prix_ht * reservation.numbreVoyageurs | currency:'EUR'}}/HT</p>
                         </li>
                         <li>
                             <p class="text-justify">{{reservation.destination.description}}</p>

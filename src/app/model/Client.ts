@@ -12,7 +12,6 @@ export class Client {
     public password:string;
     public numCB: number;
     public reservations;
-    public voyageurs;
 
     constructor(civilite: string, nom: string, prenom: string, date_naissance: Date, address: string, phone: number, email: string, password: string, numCB: number, id: number) {
         
@@ -27,7 +26,6 @@ export class Client {
         this.password = password;
         this.numCB = numCB;
         this.reservations = [];
-        this.voyageurs = [];
     }
 }
 

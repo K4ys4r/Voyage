@@ -17,7 +17,7 @@ export class FormulaireComponent implements OnInit {
   voyageurs: FormGroup;
   public newClient: Client;
   public clients;
-  public clientExist = false;
+  public clientId:  number;
 
 
   constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService, private clientService: ClientService, private router: Router) { }
@@ -71,30 +71,26 @@ export class FormulaireComponent implements OnInit {
   }
 
   onSubmit() {
-
     this.validerReservation();
-    this.router.navigate(['/paiement'])
+    if (this.voyageur.valid) {
+      this.router.navigate(['/paiement',this.clientId])
+    }
   }
 
   validerReservation() {
+    this.formule.numbreVoyageurs = this.voyageur.value.length;
     this.newClient = this.voyageur.value[0];
     let user = this.clients.find(client => client.email == this.newClient.email && client.password == this.newClient.password)
     if (user) {
-      user.reservations.push(this.formule)
-      this.clientService.updateUser(user).subscribe()
-      this.voyageurs.value.forEach(voyageur => {
-        user.voyageurs.push(voyageur)
-      });
-
+      user.reservations.push(this.formule);
+      this.clientService.updateUser(user).subscribe();
+      this.clientId = user.id;
     } else {
       this.newClient.reservations = []
-      this.newClient.voyageurs = []
-      this.voyageurs.value.forEach(voyageur => {
-        this.newClient.voyageurs.push(voyageur)
-      });
       this.newClient.reservations.push(this.formule)
-
-      this.clientService.createClient(this.newClient).subscribe()
+      this.clientService.createClient(this.newClient).subscribe(
+        (result: Client) => this.clientId = result.id
+      )
     }
 
 
