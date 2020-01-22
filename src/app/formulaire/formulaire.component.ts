@@ -18,6 +18,7 @@ export class FormulaireComponent implements OnInit {
   public newClient: Client;
   public clients;
   public clientId:  number;
+  public reservationValide = false;
 
 
   constructor(private activatedRoute: ActivatedRoute, private formuleService: FormuleService, private clientService: ClientService, private router: Router) { }
@@ -71,7 +72,6 @@ export class FormulaireComponent implements OnInit {
   }
 
   onSubmit() {
-    this.validerReservation();
     if (this.voyageur.valid) {
       this.router.navigate(['/paiement',this.clientId])
     }
@@ -92,8 +92,7 @@ export class FormulaireComponent implements OnInit {
         (result: Client) => this.clientId = result.id
       )
     }
-
-
+    this.reservationValide = true;
   }
 
   removeVoyageur(index) {

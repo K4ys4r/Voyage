@@ -35,6 +35,7 @@ export class GererMesVoyagesComponent implements OnInit {
 
   supprimerReservation(index) {
     this.client.reservations.splice(index, 1);
+    this.clientService.updateUser(this.client).subscribe()
   }
 
   LogOut(){

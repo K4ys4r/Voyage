@@ -7,14 +7,16 @@
                         <h1>Paiement</h1>
                     </div>
                     <div class="col-12" *ngIf="client">
-                        <h2> Renseignement des coordonnées bancaires</h2>
                         <div *ngFor="let reservation of client.reservations;let i=index">
                             <div class="voyagedetails">
                                 <h2>Voyage : {{i+1}}</h2>
                                 <h1>{{reservation.destination.region}}</h1>
                                 <p>Nombre de voyageurs : {{reservation.numbreVoyageurs}}</p>
-                                <p>Prix: {{reservation.prix_ht * reservation.numbreVoyageurs}}</p>
+                                <p>Prix: {{reservation.prix_ht * reservation.numbreVoyageurs | currency:'EUR'}}/HT</p>
                             </div>
+                        </div>
+                        <div>
+                            <h2> Renseignement des coordonnées bancaires</h2>
                         </div>
                     </div>
                     <div class="form-group col-md-7">

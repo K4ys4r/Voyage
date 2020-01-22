@@ -72,7 +72,7 @@
                             (click)="validerReservation()">Valider la Réservation</button>
                     </div>
                     <div class="form-group col-md-4">
-                        <button class="btn btn-primary" type="submit" [disabled]='voyageurs.invalid'>Accéder au
+                        <button class="btn btn-primary" type="submit" [disabled]='voyageurs.invalid' *ngIf='reservationValide'>Accéder au
                             paiement</button>
                     </div>
                     <div class="form-group col-md-4">
